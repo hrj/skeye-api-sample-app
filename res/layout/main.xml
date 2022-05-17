@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    >
+
+  <Button 
+    android:text="Search with Google SkyMap"
+    android:layout_width="fill_parent" 
+    android:layout_height="wrap_content"
+    android:onClick="clickSkyMapSearch"
+    android:textSize="24dip"
+    android:layout_marginBottom="18dip"
+    />
+    
+  <Button 
+    android:text="Search Bootes with SkEye"
+    android:layout_width="fill_parent" 
+    android:layout_height="wrap_content"
+    android:onClick="clickSkEyeSearch"
+    android:textSize="24dip"
+    android:layout_marginBottom="18dip"
+    />
+    
+  <Button 
+    android:text="Search Aldebaran with SkEye"
+    android:layout_width="fill_parent" 
+    android:layout_height="wrap_content"
+    android:onClick="clickAldebaranSkEyeSearch"
+    android:textSize="24dip"
+    android:layout_marginBottom="18dip"
+    />
+    
+  <Button 
+    android:text="Search Jupiter with SkEye"
+    android:layout_width="fill_parent" 
+    android:layout_height="wrap_content"
+    android:onClick="clickJupiterSkEyeSearch"
+    android:textSize="24dip"
+    android:layout_marginBottom="18dip"
+    />
+    
+  <Button 
+    android:text="Search for Messier 31 with SkEye"
+    android:layout_width="fill_parent" 
+    android:layout_height="wrap_content"
+    android:onClick="clickMessierSkEyeSearch"
+    android:textSize="24dip"
+    android:layout_marginBottom="18dip"
+    />
+    
+  <Button 
+    android:text="Search for NGC 104 with SkEye"
+    android:layout_width="fill_parent" 
+    android:layout_height="wrap_content"
+    android:onClick="clickNGCSkEyeSearch"
+    android:textSize="24dip"
+    />
+    
+</LinearLayout>
