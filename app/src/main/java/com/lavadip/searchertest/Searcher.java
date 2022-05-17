@@ -29,34 +29,53 @@ public class Searcher extends Activity {
   }
   
   public void clickSkEyeSearch(View v) {
-    safeLaunchSkEye("astro_object//constellation/bootes");
+    safeLaunchSkEyeSearch("astro_object//constellation/bootes");
   }
   
   public void clickAldebaranSkEyeSearch(View v) {
-    safeLaunchSkEye("astro_object//star/Aldebaran");
+    safeLaunchSkEyeSearch("astro_object//star/Aldebaran");
   }
   
   public void clickMessierSkEyeSearch(View v) {
-    safeLaunchSkEye("astro_object//messier/m31");
+    safeLaunchSkEyeSearch("astro_object//messier/m31");
   }
   
   public void clickNGCSkEyeSearch(View v) {
-    safeLaunchSkEye("astro_object//ngc/ngc104");
+    safeLaunchSkEyeSearch("astro_object//ngc/ngc104");
   }
   
   public void clickJupiterSkEyeSearch(View v) {
-    safeLaunchSkEye("astro_object//solarsys/jupiter");
+    safeLaunchSkEyeSearch("astro_object//solarsys/jupiter");
   }
-  
-  // The following two helper functions will help launch SkEye safely
-  private void safeLaunchSkEye(String objPath) {
+
+  public void clickViewRA0Dec0(View view) {
+    safeLaunchSkEyeView(0.0, 0.0);
+  }
+
+  public void clickViewRA10hDec45(View view) {
+    safeLaunchSkEyeView(Math.toRadians(10*15), Math.toRadians(45));
+  }
+
+  // The following three helper functions will help launch SkEye safely
+  private void safeLaunchSkEyeSearch(String objPath) {
     final Intent skEyeIntent = new Intent(Intent.ACTION_SEARCH);
     final Uri targetUri = new Uri.Builder().path(objPath).build();
     skEyeIntent.setDataAndType(targetUri, "text/astro_object");
     
     safeLaunchActivity(skEyeIntent, "SkEye v1.1 or higher");
   }
-  
+
+  private void safeLaunchSkEyeView(final Double raRadians, final Double decRadians) {
+    final Intent skEyeIntent = new Intent(Intent.ACTION_VIEW);
+    skEyeIntent.putExtra("RA", raRadians);
+    skEyeIntent.putExtra("Declination", decRadians);
+    // skEyeIntent.setType("text/astro_position");
+    final Uri targetUri = new Uri.Builder().scheme("skeye").build();
+    skEyeIntent.setDataAndType(targetUri, "text/astro_position");
+
+    safeLaunchActivity(skEyeIntent, "SkEye v5.4 or higher");
+  }
+
   private void safeLaunchActivity (Intent i, String hint) {
     System.out.println(i);
     if (i.resolveActivity(getPackageManager())!= null) {

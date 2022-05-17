@@ -57,5 +57,21 @@
     android:onClick="clickNGCSkEyeSearch"
     android:textSize="24dip"
     />
-    
+
+  <Button
+      android:text="View RA=0 and Decl=0"
+      android:layout_width="fill_parent"
+      android:layout_height="wrap_content"
+      android:onClick="clickViewRA0Dec0"
+      android:textSize="24dip"
+      />
+
+  <Button
+      android:text="View RA=10h and Decl=45"
+      android:layout_width="fill_parent"
+      android:layout_height="wrap_content"
+      android:onClick="clickViewRA10hDec45"
+      android:textSize="24dip"
+      />
+
 </LinearLayout>

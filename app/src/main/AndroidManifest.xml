@@ -19,6 +19,12 @@
             <action android:name="android.intent.action.SEARCH" />
             <data android:mimeType="text/astro_object" />
         </intent>
+
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+            <data android:mimeType="text/astro_position" />
+            <category android:name="android.intent.category.DEFAULT" />
+        </intent>
     </queries>
 
 </manifest>
