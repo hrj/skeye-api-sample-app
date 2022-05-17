@@ -58,6 +58,7 @@ public class Searcher extends Activity {
   }
   
   private void safeLaunchActivity (Intent i, String hint) {
+    System.out.println(i);
     if (i.resolveActivity(getPackageManager())!= null) {
       startActivity(i);
     } else {
