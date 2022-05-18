@@ -69,7 +69,6 @@ public class Searcher extends Activity {
     final Intent skEyeIntent = new Intent(Intent.ACTION_VIEW);
     skEyeIntent.putExtra("RA", raRadians);
     skEyeIntent.putExtra("Declination", decRadians);
-    // skEyeIntent.setType("text/astro_position");
     final Uri targetUri = new Uri.Builder().scheme("skeye").build();
     skEyeIntent.setDataAndType(targetUri, "text/astro_position");
 
